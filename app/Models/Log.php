@@ -13,9 +13,20 @@ class Log extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    /*protected $fillable =  [
-    'log_name' , 'description' ,  'subject' ,'causer' , 'properties' ,
-    ];*/
+    protected $fillable =  [
+        'user_id',
+        'ticket_id',
+        'log_name' ,
+        'description' ,
+        //'subject' ,
+        //'causer' ,
+        'properties' ,
+    ];
+
+       protected $casts = [
+        'properties' => 'array',
+    ];
+
         public function ticket()
     {
         return $this->belongsTo(Ticket::class);

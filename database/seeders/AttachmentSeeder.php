@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Ticket;
+use App\Models\Attachment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TicketSeeder extends Seeder
+class AttachmentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-       Ticket::factory(10)->create();
+       Attachment::factory(4)->create();
     }
 }
