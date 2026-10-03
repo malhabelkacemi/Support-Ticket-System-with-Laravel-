@@ -51,10 +51,10 @@ class Ticket extends Model
     {
         return $this->hasMany(Comment::class);
     }
-        public function labels()
-    {
-        return $this->belongsToMany(Label::class);
-    }
+    public function labels()
+{
+    return $this->belongsToMany(Label::class, 'ticket_label');
+}
     public function attachments()
     {
         return $this->hasMany(Attachment::class);

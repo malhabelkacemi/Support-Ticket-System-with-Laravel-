@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +21,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/cc', function () {
+    return view('dashboard.admincopy');
+});
+
+
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+Route::get('/tickets', [TicketController::class, 'index'])->middleware(['auth', 'verified'])->name('tickets.index');
+Route::get('/tickets/create', [TicketController::class, 'create'])->middleware(['auth', 'verified'])->name('tickets.create');
+Route::post('/tickets', [TicketController::class, 'store'])->middleware(['auth', 'verified'])->name('tickets.store');
+
+
+
+Route::get('/users', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('users.index');
+Route::get('/users/create', [UserController::class, 'create'])->middleware(['auth', 'verified'])->name('users.create');
+Route::post('/users', [UserController::class, 'store'])->middleware(['auth', 'verified'])->name('users.store');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

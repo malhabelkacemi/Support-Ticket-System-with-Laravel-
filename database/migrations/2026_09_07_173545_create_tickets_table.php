@@ -18,17 +18,14 @@ return new class extends Migration
                // User qui a créé le ticket
             $table->foreignId('created_by')  //$table->foreignId('user_id')->constrained('users')->onDelete('cascade');//references('id')on('users') ;
                 ->constrained('users')
-                ->nullOnDelete();;
-
+                ->nullOnDelete();
                 //je préférerais conserver les tickets même si l'utilisateur est supprimé.
                 //->cascadeOnDelete();
-
             // Agent auquel le ticket est assigné
             $table->foreignId('assigned_to')
                 ->nullable()
                 ->constrained('users')
                 ->nullOnDelete();
-
            // je ne peux pas supprimer une catégorie tant que des tickets l'utilisent.
             $table->foreignId('category_id')->constrained('categories')->restrictOnDelete();
             $table->string('title');

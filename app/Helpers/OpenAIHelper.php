@@ -6,32 +6,44 @@ use OpenAI\Laravel\Facades\OpenAI;
 
 class OpenAIHelper
 {
-  public static function generateCategories(int $count): array
-    {
-        $response = OpenAI::responses()->create([
-            'model' => 'gpt-5',
-            'input' => "Generate {$count} realistic categories for a customer support ticket system.
 
-            For each category, provide:
-            - name
-            - description
+public static function generateCategories(int $count): array
+{
+    $prompt = "Generate {$count} realistic categories for a customer support ticket system.
 
-            Return only valid JSON in this format:
-            {
-                \"categories\": [
-                    {
-                        \"name\": \"Hardware\",
-                        \"description\": \"Problems related to computers, printers and other hardware devices.\"
-                    }
-                ]
-            }",
-                    ]);
+For each category, provide:
+- name
+- description
 
-                    $data = json_decode($response->outputText, true);
+Return only valid JSON in this format:
+{
+    \"categories\": [
+        {
+            \"name\": \"Hardware\",
+            \"description\": \"Problems related to computers, printers and other hardware devices.\"
+        }
+    ]
+}
 
-                    return $data['categories'] ?? [];
-            }
+Generate exactly {$count} categories.";
 
+    $response = OpenAI::chat()->create([
+        'model' => 'gpt-4o-mini',
+        'messages' => [
+            [
+                'role' => 'user',
+                'content' => $prompt,
+            ],
+        ],
+    ]);
+
+    $data = json_decode(
+        $response->choices[0]->message->content,
+        true
+    );
+
+    return $data['categories'] ?? [];
+}
 
     public static function generateComment(): string
         {

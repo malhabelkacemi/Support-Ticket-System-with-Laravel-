@@ -12,6 +12,15 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
+ Admin BRAVOOOOOOO !!!!
+          <center class="div">
+        < Nombre de total de tickets est  :</br>
+         Nombre de tickets open est  : </br>
+         Nombre de tickets closed est  : </br>
+
+          </center>
+
+
         </div>
     </div>
 </x-app-layout>

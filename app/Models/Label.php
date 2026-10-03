@@ -19,8 +19,8 @@ class Label extends Model
         'is_visible',
     ];
 
-        public function tickets()
+    public function tickets()
     {
-        return $this->belongsToMany(Ticket::class);
+        return $this->belongsToMany(Ticket::class, 'ticket_label');//you must mention Table_pivot
     }
 }
