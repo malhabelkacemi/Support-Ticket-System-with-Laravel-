@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryRequest extends FormRequest
+class LogRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,13 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>["required","string","max:30"],
-            'description'=>['nullable',"string","min:10"],
-            'slug' =>["string","min:10"],
-            'is_visible' =>['required',"boolean"],
+            'user_id'=>['required',"exists:users,id"],
+            'ticket_id' =>['required',"exists:tickets,id"],
+            'log_name' =>['required',"max:40"],
+            'description' =>['nullable',"min:10"],
+            //'subject' ,
+            //'causer' ,
+            'properties'=>['nullable'] , //
         ];
     }
 }

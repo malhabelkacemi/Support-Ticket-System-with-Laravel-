@@ -11,7 +11,7 @@ class LabelRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class LabelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'=>["required","max:30"],
+            'description'=>['nullable',"min:10"],
+            'slug' =>['string',"min:10"],
+            'is_visible' =>['required',"boolean"],
+
         ];
     }
 }

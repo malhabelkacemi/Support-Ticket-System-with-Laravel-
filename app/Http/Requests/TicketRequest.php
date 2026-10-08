@@ -11,7 +11,7 @@ class TicketRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,13 +23,13 @@ class TicketRequest extends FormRequest
     {
         return [
         'assigned_to'=>['nullable',"exists:users,id"],
-        'category_id'=>["required","exists:category,id"],
+        'category_id'=>["required","exists:categories,id"],
         'title'=>["required" ,"string","max:40"],
-        'message'=>["required" ,"string", "min:20"],
-        'status'=>['nullable',"in:open,in_progress,archived,closed"],
-        'priority'=>['nullable',"in:low,medium,high,urgent"],
+        'message'=>["required" ,"string", "min:10"],
+        'status'=>['required',"in:open,in_progress,archived,closed"],
+        'priority'=>["required" , "in:low,medium,high,urgent"],
 
-        'label'=>["nullable"], //globalement
+        'label'=>["required"], //globalement
         'label.*'=>["exists:labels,id"], //chaque element individuel
 
         'attachment'=>['nullable'], //["array"], //si l champs est rempli doit etre obligaoirement etre une array

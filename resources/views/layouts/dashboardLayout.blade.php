@@ -1,25 +1,25 @@
-@include('dashboard.components.head')
+@include('dashboard.partials.head')
 
 <body>
     <div class="container-scroller">
 
-        @include('dashboard.components.navbar')
+        @include('dashboard.partials.navbar')
 
         <div class="container-fluid page-body-wrapper">
 
-            @include('dashboard.components.sidebar')
+            @include('dashboard.partials.sidebar')
 
             <div class="main-panel">
                 <div class="content-wrapper">
                     @yield('content')
                 </div>
 
-                @include('dashboard.components.footer')
+                @include('dashboard.partials.footer')
             </div>
 
         </div>
     </div>
 
-    @include('dashboard.components.javascript')
+    @include('dashboard.partials.javascript')
 </body>
 </html>

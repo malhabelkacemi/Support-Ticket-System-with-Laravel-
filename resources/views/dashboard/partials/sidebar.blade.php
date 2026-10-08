@@ -55,7 +55,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/forms/basic_elements.html">
+                        <a class="nav-link" href="{{ route('logs.index') }}">
                             <span class="icon-bg">
                                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                             </span>
@@ -64,7 +64,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/charts/chartjs.html">
+                        <a class="nav-link" href="{{ route('categories.index') }}">
                             <span class="icon-bg">
                                 <i class="mdi mdi-chart-bar menu-icon"></i>
                             </span>
@@ -73,7 +73,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/tables/basic-table.html">
+                        <a class="nav-link" href="{{ route('labels.index') }}">
                             <span class="icon-bg">
                                 <i class="mdi mdi-table-large menu-icon"></i>
                             </span>

@@ -50,30 +50,12 @@
                         </div>
                     </li>
 
-                    <li class="nav-item dropdown d-none d-md-block">
-                        <a class="nav-link dropdown-toggle" id="projectDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                            Projects
-                        </a>
-
-                        <div class="dropdown-menu navbar-dropdown" aria-labelledby="projectDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="mdi mdi-eye-outline mr-2"></i>View Project
-                            </a>
-
-                            <div class="dropdown-divider"></div>
-
-                            <a class="dropdown-item" href="#">
-                                <i class="mdi mdi-pencil-outline mr-2"></i>Edit Project
-                            </a>
-                        </div>
-                    </li>
 
                     <li class="nav-item nav-language dropdown d-none d-md-block">
                         <a class="nav-link dropdown-toggle" id="languageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                             <div class="nav-language-icon">
                                 <i class="flag-icon flag-icon-us" title="us" id="us"></i>
                             </div>
-
                             <div class="nav-language-text">
                                 <p class="mb-1 text-black">English</p>
                             </div>
@@ -84,9 +66,8 @@
                                 <div class="nav-language-icon mr-2">
                                     <i class="flag-icon flag-icon-ae" title="ae" id="ae"></i>
                                 </div>
-
                                 <div class="nav-language-text">
-                                    <p class="mb-1 text-black">Arabic</p>
+                                    <p class="mb-1 text-black">French</p>
                                 </div>
                             </a>
 
@@ -96,9 +77,8 @@
                                 <div class="nav-language-icon mr-2">
                                     <i class="flag-icon flag-icon-gb" title="GB" id="gb"></i>
                                 </div>
-
                                 <div class="nav-language-text">
-                                    <p class="mb-1 text-black">English</p>
+                                    <p class="mb-1 text-black">Deutsch</p>
                                 </div>
                             </a>
                         </div>
