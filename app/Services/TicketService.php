@@ -60,27 +60,11 @@ class TicketService
         ];
     }
 
-    /**
-     * Récupérer les tickets par statut (méthode générique)
-     */
+ /*
     public function getTicketsByStatus(string $status): int
     {
         return Ticket::where('status', $status)->count();
     }
+*/
 
-    /**
-     * Récupérer les tickets actifs (non fermés et non archivés)
-     */
-    public function getActiveTicketsCount(): int
-    {
-        return Ticket::whereIn('status', ['open', 'in_progress'])->count();
-    }
-
-    /**
-     * Récupérer les tickets terminés (fermés ou archivés)
-     */
-    public function getCompletedTicketsCount(): int
-    {
-        return Ticket::whereIn('status', ['closed', 'archived'])->count();
-    }
 }

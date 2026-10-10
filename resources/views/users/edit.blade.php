@@ -20,7 +20,7 @@
 
                 <form
                     action="{{ route('users.update', $user) }}"
-                    method="PUT"
+                    method="POST"
                     enctype="multipart/form-data"
                     class="forms-sample"
                 >

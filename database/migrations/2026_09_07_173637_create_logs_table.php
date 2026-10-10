@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('ticket_id')->constrained('tickets')->onDelete('cascade');
 
             $table->string('log_name')->nullable();
-            $table->text('description'); //action
+            $table->text('description');
             $table->nullableMorphs('subject');
             $table->nullableMorphs('causer');
            // $table->nullableMorphs('subject', 'subject');

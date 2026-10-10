@@ -147,7 +147,7 @@
                         <td>{{ $ticket->priority }}</td>
                         <td>{{ $ticket->creator->name ?? 'Inconnu' }}</td>
                         <td>{{ $ticket->assignedAgent ? $ticket->assignedAgent->name : 'Not assigned' }}</td>
-                        <td>{{ $ticket->category->name }}</td>
+                        <td>{{ $ticket->category->name ?? 'Aucune catégorie'}}</td>
                         <td>
                             {{ $ticket->labels->pluck('name')->implode(' | ') }}
                         </td>

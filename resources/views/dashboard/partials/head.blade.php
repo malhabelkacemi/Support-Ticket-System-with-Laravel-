@@ -7,9 +7,9 @@
 
     <title>@yield('title', 'Dashboard')</title>
 
-    <!-- Bootstrap 4 -->
+    <!-- Bootstrap 4
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
+-->
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 

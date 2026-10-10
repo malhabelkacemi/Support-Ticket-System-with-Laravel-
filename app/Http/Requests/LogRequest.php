@@ -22,13 +22,19 @@ class LogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id'=>['required',"exists:users,id"],
-            'ticket_id' =>['required',"exists:tickets,id"],
-            'log_name' =>['required',"max:40"],
-            'description' =>['nullable',"min:10"],
-            //'subject' ,
-            //'causer' ,
-            'properties'=>['nullable'] , //
+        'user_id' => ['required', 'integer', 'exists:users,id'],
+        'ticket_id' => ['nullable', 'integer', 'exists:tickets,id'],
+        'log_name' => ['required', 'string', 'max:40'],
+        'description' => ['required', 'string', 'min:10', 'max:1000'],
+        'properties' => ['nullable', 'array'],
+        'properties.*' => ['nullable'],
+
+        // Champs polymorphiques (si vous les utilisez)
+        'subject_type' => ['nullable', 'string', 'max:255'],
+        'subject_id' => ['nullable', 'integer'],
+        'causer_type' => ['nullable', 'string', 'max:255'],
+        'causer_id' => ['nullable', 'integer'],
+
         ];
     }
 }

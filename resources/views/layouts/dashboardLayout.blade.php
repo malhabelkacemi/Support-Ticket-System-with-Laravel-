@@ -1,3 +1,4 @@
+
 @include('dashboard.partials.head')
 
 <body>
